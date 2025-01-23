@@ -30,19 +30,19 @@ const Login = (props) => {
         setCredentials({...credentials, [e.target.name]: e.target.value})
     }
   return (
-    <div className='mt-3'>
+    <div className='mt-3'  style={{marginLeft: "300px"}}>
         <h2>Login to continue to iNotebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
             <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name = "email" aria-describedby="emailHelp"/>
+            <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name = "email" aria-describedby="emailHelp"  style={{width:"700px"}}/>
             <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div className="mb-3">
             <label htmlFor="Password" className="form-label">Password</label>
-            <input type="password" className="form-control" value={credentials.password} onChange={onChange} id="Password" name="password" />
+            <input type="password" className="form-control" value={credentials.password} onChange={onChange} id="Password" name="password"  style={{width:"700px"}}/>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary" style={{color: "white",backgroundColor: "purple", borderRadius: "4px", width: "700px"}}>Submit</button>
         </form>
     </div>
   )

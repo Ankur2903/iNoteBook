@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../Context/notes/noteContext';
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
-import { useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom';
+import Image1 from './Screenshot 2025-01-23 104647.png';
+import Image2 from './Screenshot 2025-01-23 105439.png';
 
 const Notes = (props) => {
     const context = useContext(noteContext);
@@ -44,9 +46,39 @@ const Notes = (props) => {
     }
     }
 
+      const containerStyle = {
+        display: "flex",
+        height: "60vh",
+      };
+    
+      const leftStyle = {
+        flex: 1,
+        backgroundColor: "#ffffff", // Light gray background for the left side
+        padding: "20px",
+        boxSizing: "border-box",
+      };
+    
+      const rightStyle = {
+        flex: 1,
+        backgroundColor: "#ffffff", // White background for the right side
+        padding: "20px",
+        boxSizing: "border-box",
+      };
+
   return (
     <>
-    <AddNote showAlert={props.showAlert}/>
+    <div style={containerStyle}>
+      <div style={leftStyle}>
+      <img src={Image2} style={{width: "500px"}}></img>
+      <h2>Your notebook on colud - safe and secure</h2>
+      <p>An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee. For more info you can checkout our <Link to="/about">About Page</Link></p>
+      <Link to = "/addnote"><button className='btn-btn' style={{width: "200px", height: "50px", color: "white",backgroundColor: "purple", borderRadius: "4px"}} ><h5>Create New Note</h5></button></Link>
+      </div>
+      <div style={rightStyle}>
+       <img src={Image1} style={{width: "700px"}}></img>
+      </div>
+    </div>
+    
     <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"  aria-hidden="true">
       <div className="modal-dialog">
@@ -84,7 +116,7 @@ const Notes = (props) => {
       </div>
     </div>
     <div className='row my-3'>
-      <h2>Your Notes</h2>
+      <h1 style={{fontWeight: "bold"}}>Your Notes:</h1>
       <div className="container">
       {notes.length===0 && 'No notes to display'}
       </div>
