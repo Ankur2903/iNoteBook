@@ -16,6 +16,10 @@ app.use('/uploads', express.static(path.join(__dirname, '../', 'uploads')));
 app.use(cors())
 app.use(express.json())
 
+app.get('/ping',(req, res) => {
+    res.send('PONG') ;
+})
+
 app.use('/api/auth',require(('./routes/auth')))
 app.use('/api/notes',require(('./routes/notes')))
 
