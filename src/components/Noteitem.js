@@ -15,7 +15,7 @@ const Noteitem = (props) => {
                 <i className="far fa-edit mx-2" onClick={()=>{updateNote(note)}} style={{color: "purple"}}></i>
             </div>
             <p className="card-text">{note.description}</p>
-            {note.file && <a href={`http://localhost:5000/${note.file}`} className="btn btn-primary mt-2 my-2" target="_blank" rel="noreferrer" style={{color: "white",backgroundColor: "purple", borderRadius: "4px"}}>Open in new Tab</a>}
+            {/* {note.file && <a href={`http://localhost:5000/${note.file}`} className="btn btn-primary mt-2 my-2" target="_blank" rel="noreferrer" style={{color: "white",backgroundColor: "purple", borderRadius: "4px"}}>Open in new Tab</a>} */}
             <br></br>
             {note.file && (
             <>

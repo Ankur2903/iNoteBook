@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
-const mongoURI = "mongodb://localhost:27017/?readPreference=primary&directConnection=true&tls=false"
+const mongo_url =  process.env.MONGO_CONN;
 
-const connectToMongo = ()=>{
-    mongoose.connect(mongoURI).then(()=>console.log("Connected")).catch((e)=>console.log(e.message))
-}
-
-module.exports = connectToMongo;
+mongoose.connect(mongo_url)
+    .then(()=> {
+        console.log('db is working...')
+    })
+    .catch((err)=>{
+        console.log('mongoDB Connection Error:', err);
+    })
